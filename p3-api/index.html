@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClimaTec — Widget de clima (ViajaPerú)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>ClimaTec</h1>
+    <p class="sub">Consulta el clima actual de cualquier ciudad. Datos de <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>.</p>
+
+    <form id="form-busqueda" novalidate>
+      <label for="ciudad">Nombre de la ciudad</label>
+      <input
+        type="text"
+        id="ciudad"
+        name="ciudad"
+        placeholder="Ej. Cusco"
+        autocomplete="off"
+      >
+      <button type="submit" id="btn-buscar">Buscar clima</button>
+    </form>
+
+    <div id="estado-cargando" class="estado oculto" role="status" aria-live="polite">
+      Cargando…
+    </div>
+
+    <div id="resultado" class="resultado oculto" aria-live="polite">
+      <h2 id="resultado-ciudad"></h2>
+      <p id="resultado-region"></p>
+      <p id="resultado-temperatura"></p>
+      <p id="resultado-viento"></p>
+    </div>
+
+    <div id="mensaje" class="mensaje oculto" role="alert" aria-live="polite"></div>
+  </main>
+
+  <script type="module" src="clima.js"></script>
+</body>
+</html>
